@@ -1,0 +1,66 @@
+wget is a tool that sustains file downloads in unstable and slow network connections. If a network problem occurs during a download, this software will resumes the file from where it got stuck not from start.
+
+Another useful feature is performing recursive downloads. wget transfers not only individual files but also entire directory structures by following links. As a result, the tool creates local copies of entire web pages, maintaining their structure and content.
+
+The wget command is highly flexible and works in terminals, scripts, and cron jobs. The user does not have to be active or logged in during the download.Benifits of wget are easy to resuming downloads, versatility and bandwidth controls.
+
+wget options are;
+-b, --background
+Goes to background immediately after startup.
+-q, --quietRuns wget in quiet mode, suppressing output except for errors and essential messages.
+-d, --debugTurns on debug output.
+-O, --output-document=[file]Specifies the output file name.-e [command], --execute [command]Executes a command after the download completes. This is useful for performing additional actions, such as running a script.
+-v, --verboseTurns on verbose output with all the available data. The default output is verbose.
+-nv, --no-verboseTurns on verbose output with all the available data. The default output is verbose.
+-c, --continueResumes downloading a partially downloaded file.-r, --recursiveEnables recursive downloading.
+-P, --directory-prefix=[prefix]Specifies the directory where downloaded files are to be saved.
+-l, --level=[depth]
+Limits the recursion depth when downloading recursively.
+--limit-rate=[rate]Limits the download rate to the specified value.
+-R, --reject=[list]Specifies a comma-separated list of file extensions to reject during recursive downloads.
+-A, --accept=[list]
+Specifies a comma-separated list of file extensions to accept during recursive downloads.
+-i, --input-fileSpecifies a file containing a list of URLs wget downloads.
+-m, --mirrorDownloads all of the website's content recursively, including directories, subdirectories, and linked pages, while preserving the original directory structure.
+--tries=[number_of_tries]Sets the maximum number of retries for failed downloads when using wget.
+--no-check-certificateDisables SSL certificate verification when making HTTPS connections.
+U, --user-agent="user-agent-here"Allows users to specify a custom user agent string for HTTP requests.
+
+wget exmaples:
+To download a file from the web, use:
+
+wget [URL]
+To download a file and save it under a specified name, run:
+
+wget -O [file_name] [URL]
+Download File to Specific Directory;
+
+wget -P [target_directory] [URL]
+To set download speed;
+
+wget --limit-rate [maximum_speed] [URL]
+To continue[-c] the interrupted download;
+
+wget -c [URL]
+To download multiple files;
+
+wget -i [file_name]
+To change the user agent;
+
+wget --user-agent="User-Agent-Here" "[URL]"
+To skip certificate check;
+
+wget --no-check-certificate [URL]
+to increase retry attempts;
+
+wget --tries=[number_of_tries] [URL]
+Download in Background;
+
+wget -b [URL]
+Download Web Page (Mirror Web page);
+
+wget -m [URL]
+
+
+
+
